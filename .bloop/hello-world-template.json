@@ -126,23 +126,6 @@
                 },
                 {
                     "organization": "org.typelevel",
-                    "name": "cats-core_2.13",
-                    "version": "2.0.0",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "cats-core_2.13",
-                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0.jar"
-                        },
-                        {
-                            "name": "cats-core_2.13",
-                            "classifier": "sources",
-                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
                     "name": "cats-kernel_2.13",
                     "version": "2.0.0",
                     "configurations": "default",
@@ -172,6 +155,23 @@
                             "name": "cats-macros_2.13",
                             "classifier": "sources",
                             "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.13/2.0.0/cats-macros_2.13-2.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-core_2.13",
+                    "version": "2.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-core_2.13",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0.jar"
+                        },
+                        {
+                            "name": "cats-core_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0-sources.jar"
                         }
                     ]
                 },

@@ -15,10 +15,15 @@
         ],
         "classpath": [
             "/Users/ingunjon/Desktop/scala/hello-world-template/.bloop/hello-world-template/scala-2.13/classes",
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3.jar",
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/1.2.0/scala-xml_2.13-1.2.0.jar",
             "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3.jar",
-            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0.jar",
             "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.13/2.0.0/cats-kernel_2.13-2.0.0.jar",
-            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.13/2.0.0/cats-macros_2.13-2.0.0.jar"
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest-compatible/3.1.0/scalatest-compatible-3.1.0.jar",
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest_2.13/3.1.0/scalatest_2.13-3.1.0.jar",
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.13/2.0.0/cats-macros_2.13-2.0.0.jar",
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.13/3.1.0/scalactic_2.13-3.1.0.jar",
+            "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0.jar"
         ],
         "out": "/Users/ingunjon/Desktop/scala/hello-world-template/.bloop/hello-world-template",
         "classesDir": "/Users/ingunjon/Desktop/scala/hello-world-template/.bloop/hello-world-template/scala-2.13/test-classes",
@@ -110,6 +115,40 @@
             "modules": [
                 {
                     "organization": "org.scala-lang",
+                    "name": "scala-reflect",
+                    "version": "2.13.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-reflect",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.3/scala-reflect-2.13.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang.modules",
+                    "name": "scala-xml_2.13",
+                    "version": "1.2.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-xml_2.13",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/1.2.0/scala-xml_2.13-1.2.0.jar"
+                        },
+                        {
+                            "name": "scala-xml_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/1.2.0/scala-xml_2.13-1.2.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
                     "name": "scala-library",
                     "version": "2.13.3",
                     "configurations": "default",
@@ -122,23 +161,6 @@
                             "name": "scala-library",
                             "classifier": "sources",
                             "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3-sources.jar"
-                        }
-                    ]
-                },
-                {
-                    "organization": "org.typelevel",
-                    "name": "cats-core_2.13",
-                    "version": "2.0.0",
-                    "configurations": "default",
-                    "artifacts": [
-                        {
-                            "name": "cats-core_2.13",
-                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0.jar"
-                        },
-                        {
-                            "name": "cats-core_2.13",
-                            "classifier": "sources",
-                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0-sources.jar"
                         }
                     ]
                 },
@@ -160,6 +182,40 @@
                     ]
                 },
                 {
+                    "organization": "org.scalatest",
+                    "name": "scalatest-compatible",
+                    "version": "3.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalatest-compatible",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest-compatible/3.1.0/scalatest-compatible-3.1.0.jar"
+                        },
+                        {
+                            "name": "scalatest-compatible",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest-compatible/3.1.0/scalatest-compatible-3.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scalatest",
+                    "name": "scalatest_2.13",
+                    "version": "3.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalatest_2.13",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest_2.13/3.1.0/scalatest_2.13-3.1.0.jar"
+                        },
+                        {
+                            "name": "scalatest_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest_2.13/3.1.0/scalatest_2.13-3.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
                     "organization": "org.typelevel",
                     "name": "cats-macros_2.13",
                     "version": "2.0.0",
@@ -173,6 +229,40 @@
                             "name": "cats-macros_2.13",
                             "classifier": "sources",
                             "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.13/2.0.0/cats-macros_2.13-2.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scalactic",
+                    "name": "scalactic_2.13",
+                    "version": "3.1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalactic_2.13",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.13/3.1.0/scalactic_2.13-3.1.0.jar"
+                        },
+                        {
+                            "name": "scalactic_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.13/3.1.0/scalactic_2.13-3.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-core_2.13",
+                    "version": "2.0.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-core_2.13",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0.jar"
+                        },
+                        {
+                            "name": "cats-core_2.13",
+                            "classifier": "sources",
+                            "path": "/Users/ingunjon/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.13/2.0.0/cats-core_2.13-2.0.0-sources.jar"
                         }
                     ]
                 },
