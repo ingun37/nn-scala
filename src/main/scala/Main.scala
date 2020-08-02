@@ -6,6 +6,9 @@ import scala.collection.immutable.Nil
 import scala.math.{exp, pow}
 
 object Main extends App {
+  case class NN (
+
+  )
   type Vec = List[Double]
   trait WeightDifferentiable {
     val prevActivation: Vec
@@ -33,5 +36,13 @@ object Main extends App {
       }
     }
   }
-
+  def sigmo(x:Double): Double = 1.0/(1.0+exp(-x))
+  trait Sigmoid extends Differentiable {
+    override val func: Vec => Vec = x => x match {
+      case x :: next => List(sigmo(x))
+    }
+    override val derivative: Vec => Matrix = x => x match {
+      case x :: next => Matrix(List(List(sigmo(x) * (1-sigmo(x)))))
+    }
+  }
 }
