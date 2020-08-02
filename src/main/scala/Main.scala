@@ -7,6 +7,11 @@ import scala.math.{exp, pow}
 
 object Main extends App {
   type Vec = List[Double]
+  trait WeightDifferentiable {
+    val prevActivation: Vec
+    val func: Matrix => Vec
+    val derivative: Matrix => Matrix
+  }
   trait Differentiable {
     val func: Vec => Vec
     val derivative: Vec => Matrix
@@ -19,9 +24,14 @@ object Main extends App {
           parent.derivative(g.func(a)) * g.derivative(a)
       }
     }
+    def compose(g: WeightDifferentiable): WeightDifferentiable = {
+      val parent = this
+      return new WeightDifferentiable {
+        val prevActivation: Vec = g.prevActivation
+        val func: Matrix => Vec = parent.func compose g.func
+        val derivative: Matrix => Matrix = parent.derivative compose (_*prevActivation)
+      }
+    }
   }
-  // trait WeightDifferentiable {
-  //   val prevActivation: Vec
-  //   val func: Matrix => Vec = (m)=>
-  // }
+
 }

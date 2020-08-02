@@ -18,6 +18,9 @@ project/plugins/project/
 .worksheet
 .idea
 
-.metals
-.bloop
 .semanticdb
+
+.metals/
+.bloop/
+.ammonite/
+project/metals.sbt
