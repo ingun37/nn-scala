@@ -70,4 +70,24 @@ class CubeCalculatorTest extends org.scalatest.FunSuite {
 
     assert(fg.derivative(List(Pi/2)) == Matrix(List(List(-7))))
   }
+  test("iiiiii") {
+    val f = new Differentiable {
+      val func: List[Double] => List[Double] = x => throw new Exception("no need to implement")
+      val derivative: List[Double] => Matrix = x => x match {
+        case 2 :: -1 :: next => Matrix(List(List(3,-2)))
+        case aaa => Matrix(List(List(-333,-333)))
+      }
+    }
+    val g = new Differentiable {
+      val func: List[Double] => List[Double] = x => x match {
+        case x :: y :: next => List(x*x*y, x-y)
+      }
+      
+      val derivative: List[Double] => Matrix = x => x match {
+        case x :: y :: next => Matrix(List(List(2*x*y, x*x), List(1, -1)))
+      }
+    }
+    val fg = f compose g
+    assert(fg.derivative(List(1,2)) == Matrix(List(List(10,5))))
+  }
 }
