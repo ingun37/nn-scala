@@ -24,6 +24,8 @@ case class Matrix(data: List[List[Double]]) {
     } toList)
 
   def transpose:Matrix = Matrix(data.transpose)
+
+  def *(b:List[Double]): List[Double] = (this * Matrix(List(b)).transpose).transpose.data.head
   override def toString: String = {
     valid
     data.map(_.mkString(" | ")).mkString("\n")

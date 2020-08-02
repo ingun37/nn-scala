@@ -95,4 +95,10 @@ class CubeCalculatorTest extends org.scalatest.FunSuite {
     val m = Matrix(List(List(1,2)))
     assert(m.transpose == Matrix(List(List(1), List(2))))
   }
+
+  test("multiply by vector") {
+    val m = Matrix(List(List(1,2,3), List(4,5,6)))
+    val v:List[Double] = List(7,8,9)
+    assert(m * v == List[Double](50,122))
+  }
 }
