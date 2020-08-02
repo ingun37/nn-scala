@@ -3,7 +3,7 @@ import cats.Apply
 import cats.implicits._
 import com.kubukoz.polskibus.domain.Matrix
 import scala.collection.immutable.Nil
-import scala.math.{exp, pow}
+import scala.math.{exp, pow, cos, sin, Pi}
 import Main.Differentiable
 
 class CubeCalculatorTest extends org.scalatest.FunSuite {
@@ -37,5 +37,37 @@ class CubeCalculatorTest extends org.scalatest.FunSuite {
     assert(fg.func(List(4)) == List(873.5704005303078))
     assert(fg.derivative(List(4)) == Matrix(List(List(1310.3556007954617))))
   }
-  test("htns") {}
+  test("htns") {
+    val f = new Differentiable {
+      val func: List[Double] => List[Double] = x => {
+        x match {
+          case x :: y :: z :: next => List(pow(x,3)*y*z + x*y + z + 3)
+        }
+      }
+      
+      val derivative: List[Double] => Matrix = x => {
+        x match {
+          case x :: y :: z :: next => Matrix(List(List(3*pow(x,2)*y*z+y, pow(x,3)*z+x, pow(x,3)*y+1)))
+        }
+      }
+    }
+
+    val g = new Differentiable {
+      val func: List[Double] => List[Double] = x => {
+        x match {
+          case t :: next => List(3*cos(t), 3*sin(t), 2*t)
+        }
+      }
+      
+      val derivative: List[Double] => Matrix = x => {
+        x match {
+          case t :: next => Matrix(List(List(-3*sin(t)), List(3*cos(t)), List(2)))
+        }
+      }
+    }
+
+    val fg = f compose g
+
+    assert(fg.derivative(List(Pi/2)) == Matrix(List(List(-7))))
+  }
 }
