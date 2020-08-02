@@ -7,7 +7,7 @@ import scala.math.{exp, pow, cos, sin, Pi}
 import Main.Differentiable
 
 class CubeCalculatorTest extends org.scalatest.FunSuite {
-  test("aoeu") {
+  test("chain rule") {
     val f = new Differentiable {
       val func: List[Double] => List[Double] = x =>
         x match {
@@ -37,7 +37,7 @@ class CubeCalculatorTest extends org.scalatest.FunSuite {
     assert(fg.func(List(4)) == List(873.5704005303078))
     assert(fg.derivative(List(4)) == Matrix(List(List(1310.3556007954617))))
   }
-  test("htns") {
+  test("chain rule 2") {
     val f = new Differentiable {
       val func: List[Double] => List[Double] = x => {
         x match {
@@ -70,7 +70,7 @@ class CubeCalculatorTest extends org.scalatest.FunSuite {
 
     assert(fg.derivative(List(Pi/2)) == Matrix(List(List(-7))))
   }
-  test("iiiiii") {
+  test("chain rule 3") {
     val f = new Differentiable {
       val func: List[Double] => List[Double] = x => throw new Exception("no need to implement")
       val derivative: List[Double] => Matrix = x => x match {
@@ -89,5 +89,10 @@ class CubeCalculatorTest extends org.scalatest.FunSuite {
     }
     val fg = f compose g
     assert(fg.derivative(List(1,2)) == Matrix(List(List(10,5))))
+  }
+
+  test("transpose") {
+    val m = Matrix(List(List(1,2)))
+    assert(m.transpose == Matrix(List(List(1), List(2))))
   }
 }

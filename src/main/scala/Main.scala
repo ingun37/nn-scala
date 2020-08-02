@@ -6,17 +6,22 @@ import scala.collection.immutable.Nil
 import scala.math.{exp, pow}
 
 object Main extends App {
+  type Vec = List[Double]
   trait Differentiable {
-    val func: List[Double] => List[Double]
-    val derivative: List[Double] => Matrix
+    val func: Vec => Vec
+    val derivative: Vec => Matrix
 
     def compose(g: Differentiable): Differentiable = {
       val parent = this
       return new Differentiable {
-        val func: List[Double] => List[Double] = parent.func compose g.func
-        val derivative: List[Double] => Matrix = a =>
+        val func: Vec => Vec = parent.func compose g.func
+        val derivative: Vec => Matrix = a =>
           parent.derivative(g.func(a)) * g.derivative(a)
       }
     }
   }
+  // trait WeightDifferentiable {
+  //   val prevActivation: Vec
+  //   val func: Matrix => Vec = (m)=>
+  // }
 }
